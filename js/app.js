@@ -10,12 +10,17 @@ const App = React.createClass({
             isEditor: !this.state.isEditor
         })
     },
+    addElement:function (element) {
+      const elements = this.state.elements;
+        elements.push(element);
+        this.setState(elements)
+    },
     render: function () {
         const isEditor = this.state.isEditor
         return <div>
             <button onClick={this.toggle}>{isEditor ? "preview" : "edit"}</button>
             <div className={isEditor ? "" : "hidden"}>
-                <Editor/>
+                <Editor elements = {this.state.elements} onAdd={this.addElement}/>
             </div>
             <div className={isEditor ? "hidden" : ""}>
                 <Preview/>
@@ -25,9 +30,39 @@ const App = React.createClass({
 })
 const Editor = React.createClass({
     render: function () {
-        return <div></div>
+        return <div>
+            <Left elements={this.props.elements}/>
+            <Right onAdd={this.props.omAdd}/>
+        </div>
     }
 });
+const Left = React.createClass({
+  render: function(){
+      const elements= this.props.elements.map((ele,index)=>{
+            return <div key={index}>
+                <input type={ele}/>
+                <button>-</button>
+            </div>
+      });
+    return <div>
+        {elements}
+    </div>
+  }
+});
+
+const Right = React.createClass({
+    add:function () {
+      const element =$("input[name=element]:checked").val();
+        this.props.onAdd(element)
+    },
+  render: function(){
+    return <div>
+        <input type="radio"name="element" value="text"/>text
+        <input type="radio"name="element" value="date"/>date
+        <button onClick={this.add}>+</button>
+    </div>
+  }
+})
 const Preview = React.createClass({
     render: function () {
         return <div></div>
