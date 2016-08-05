@@ -44,14 +44,14 @@ const Editor = React.createClass({
 })
 
 const Left = React.createClass({
-    delete:function (index) {
-      this.props.ondelete(index)
+    delete: function (index) {
+        this.props.ondelete(index)
     },
     render: function () {
         const elements = this.props.elements.map((ele, index)=> {
             return <div key={index}>
                 <input type={ele}/>
-                <button onClick={this.delete.bind(this,index)}>-</button>
+                <button onClick={this.delete.bind(this, index)}>-</button>
             </div>
         });
 
@@ -63,8 +63,8 @@ const Left = React.createClass({
 })
 
 const Right = React.createClass({
-    add:function () {
-      const element =$("input[name=element]:checked").val();
+    add: function () {
+        const element = $("input[name=element]:checked").val();
         this.props.onAdd(element);
     },
     render: function () {
@@ -77,8 +77,20 @@ const Right = React.createClass({
 })
 const Preview = React.createClass({
     render: function () {
-        return <div></div>
+        const elements = this.props.elements.map((ele, index)=> {
+            return <div key={index}>
+                <input type={ele}/>
+            </div>
+        });
+
+        return
+        <div>
+            {elements}
+            <button>submit</button>
+        </div>
     }
+
+
 })
 
 
