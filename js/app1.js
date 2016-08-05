@@ -102,7 +102,7 @@ const Preview = React.createClass({
         });
         return <div id="nine" className="text-center">
             <div className="elements">
-            {elements}
+                {elements}
             </div>
             <button className=" btn btn-lg center-block" id="eghit">submit</button>
         </div>

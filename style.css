@@ -1,0 +1,66 @@
+body {
+    background-color: #ffffff;
+}
+
+#one {
+    margin-top: 50px;
+}
+
+#two {
+    border-radius: 50%;
+    color: #74ae7a;
+}
+
+#three {
+    background-color: #74ae7a;
+    margin-top: 40px;
+    font-size: 1.4em
+}
+
+#four {
+    background-color: #74ae7a;
+    margin-top: 40px;
+    font-size: 1.4em;
+}
+
+#five {
+    background-color: #74ae7a;
+    margin-top: 30px;
+}
+
+.six {
+    background-color: #74ae7a;
+    margin-top: 15px;
+    height: 30px;
+    width: 240px;
+}
+
+#seven {
+    margin-top: 15px;
+}
+
+#eghit {
+    border-radius: 50%;
+    margin-top: 70px;
+    color: #74ae7a;
+}
+
+#nine {
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.size {
+    height: 20px;
+    width: 40px;
+}
+
+#aa {
+    height: 30px;
+    width: 30px;
+}
+.elements{
+    border:1px solid #8c8c8c ;
+    padding: 20px;
+}
